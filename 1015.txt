@@ -1,0 +1,277 @@
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015
+$ git clone https://github.com/eunhyun320/kiwu_pr.git .
+Cloning into '.'...
+remote: Enumerating objects: 58, done.
+remote: Counting objects: 100% (58/58), done.
+remote: Compressing objects: 100% (41/41), done.
+remote: Total 58 (delta 25), reused 41 (delta 12), pack-reused 0 (from 0)
+Receiving objects: 100% (58/58), 8.24 KiB | 4.12 MiB/s, done.
+Resolving deltas: 100% (25/25), done.
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git log
+commit 212799babe73271cdc7dccdf1e3eef7cd3266567 (HEAD -> main, origin/main, origin/HEAD)
+Author: Eunhyun Kim <kesther4669@naver.com>
+Date:   Wed Oct 1 23:04:22 2025 +0900
+
+    update week05.py
+
+commit 67801cb9b8ac9cd41f477500d3e5e61faf28414f
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Wed Oct 1 16:21:37 2025 +0900
+
+    Fork and Pull Request Lab
+
+commit 0e9b412806e3557b7f06ad382314438d2606833f
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Wed Sep 24 16:20:46 2025 +0900
+
+    week04.txt linux command & git command
+
+commit d99169dccac48ab1e0d289e23178fb8eb047beb7
+Merge: 297980e 5a24118
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Wed Sep 24 15:48:58 2025 +0900
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git log --oneline
+212799b (HEAD -> main, origin/main, origin/HEAD) update week05.py
+67801cb Fork and Pull Request Lab
+0e9b412 week04.txt linux command & git command
+d99169d Merge branch 'main' of https://github.com/inhadeepblue/kiwu
+297980e initial .gitignore
+5a24118 touch / .gitignore
+5415782 fixed conflicts.
+e2c3216 git log --option
+b8970d3 git log --option
+4915508 linux copy command
+e6cfb75 review week01~week03
+68591da 8th commit
+f0f0d51 7th commit
+ddcae91 6th commit
+e3df44f 5th commit
+78f71da 4th README.md
+4b1f038 3rd commit
+f427f15 2nd commit
+607fb88 1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ ^C
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git log --oneline --graph
+* 212799b (HEAD -> main, origin/main, origin/HEAD) update week05.py
+* 67801cb Fork and Pull Request Lab
+* 0e9b412 week04.txt linux command & git command
+*   d99169d Merge branch 'main' of https://github.com/inhadeepblue/kiwu
+|\
+| * 5a24118 touch / .gitignore
+* | 297980e initial .gitignore
+|/
+*   5415782 fixed conflicts.
+|\
+| * e2c3216 git log --option
+* | b8970d3 git log --option
+|/
+* 4915508 linux copy command
+* e6cfb75 review week01~week03
+* 68591da 8th commit
+* f0f0d51 7th commit
+* ddcae91 6th commit
+* e3df44f 5th commit
+* 78f71da 4th README.md
+* 4b1f038 3rd commit
+* f427f15 2nd commit
+* 607fb88 1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ ls
+README.md   week02.txt  week04.txt  week05.txt
+week01.txt  week03.txt  week05.py
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ cat week05.py
+import requests
+
+city = "Daegu"
+url = f"https://wttr.in/{city}?format=%C+%t"
+# url = f"https://kin.naver.com/park"
+# url = f"https://wttr.in/incheon?&n&Q"
+# url = f"https://wttr.in/incheon?&0&Q"
+
+# response = requests.get(url)
+# print(response)
+# print(response.status_code)
+
+# if response.status_code == 200:
+#     print(response.text.strip())
+# else:
+#     print(f"상태 코드 : {response.status_code}")
+
+response = requests.get(url)
+
+if response.status_code == 200:
+    weather = response.text.strip()
+    print(f"{city}의 날씨는 {weather} 입니다.")
+else:
+    print(f"날씨 정보를 가져오지 못했습니다. 상태 코드: {response.status_code}")
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ ls
+IoT_1015.ipynb  week01.txt  week03.txt  week05.py
+README.md       week02.txt  week04.txt  week05.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        IoT_1015.ipynb
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git add IoT_1015.ipynb
+warning: in the working copy of 'IoT_1015.ipynb', LF will be replaced by CRLF the next time Git touches it
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   IoT_1015.ipynb
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    IoT_1015.ipynb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        iot_1015.py
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git add iot_1015.py
+warning: in the working copy of 'iot_1015.py', LF will be replaced by CRLF the next time Git touches it
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ ^C
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   IoT_1015.ipynb
+        new file:   iot_1015.py
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    IoT_1015.ipynb
+        deleted:    iot_1015.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        IoT1015.py
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git add IoT1015.py
+warning: in the working copy of 'IoT1015.py', LF will be replaced by CRLF the next time Git touches it
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git config --global core.autocrlf false
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git add IoT1015.py
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git commit -m "IoT_1015"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Kyungin@207-04.(none)')
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ $ git config --global user.email "kesther4669@naver.com"
+bash: $: command not found
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$  git config --global user.email "kesther4669@naver.com"
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git config --global user.name "eunhyun"
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git commit -m "IoT_1015"
+[main d080402] IoT_1015
+ 3 files changed, 152 insertions(+)
+ create mode 100644 IoT1015.py
+ create mode 100644 IoT_1015.ipynb
+ create mode 100644 iot_1015.py
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git push
+info: please complete authentication in your browser...
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.85 KiB | 1.85 MiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/eunhyun320/kiwu_pr.git
+   212799b..d080402  main -> main
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   IoT_1015.ipynb
+        deleted:    iot_1015.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git add IoT_1015.ipynb
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git commit -m "2nd 1015"
+[main 572e6bc] 2nd 1015
+ 1 file changed, 93 insertions(+)
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.02 KiB | 2.02 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/eunhyun320/kiwu_pr.git
+   d080402..572e6bc  main -> main
+
+Kyungin@207-04 MINGW64 ~/Desktop/1015 (main)
+$

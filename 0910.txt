@@ -1,0 +1,564 @@
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu
+$ ls
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu
+$ touch week01.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu
+$ ls
+week01.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu
+$ cat week01.txt
+ghfghfghfghf
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu
+$ git init
+Initialized empty Git repository in C:/Users/Kyungin/Desktop/kiwu/.git/
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        week01.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ ls
+week01.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ ls -a
+./  ../  .git/  week01.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ cd .git
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/.git (GIT_DIR!)
+$ ls
+HEAD  config  description  hooks/  info/  objects/  refs/
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/.git (GIT_DIR!)
+$ cd ..
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ pwd
+/c/Users/Kyungin/Desktop/kiwu
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        week01.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git add week01.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   week01.txt
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git commit -m "1st commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Kyungin@207-04.(none)')
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git config --global user.email "kesther4669@naver.com"
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git config --global user.name "eunhyun"
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git commit -m "1st commit"
+[master (root-commit) 392107e] 1st commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 week01.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git log
+commit 392107ebf6fd511aeea5c133e232e200889656b4 (HEAD -> master)
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 14:47:32 2025 +0900
+
+    1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ echo "Hello Raspberry pi"
+Hello Raspberry pi
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ echo "리눅스명령어, 깃명령어"
+리눅스명령어, 깃명령어
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ echo "리눅스명령어, 깃명령어" >> week02.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   week01.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        week02.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git add .
+warning: in the working copy of 'week02.txt', LF will be replaced by CRLF the next time Git touches it
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   week01.txt
+        new file:   week02.txt
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git commit -m "2nd commit"
+[master b0a9dd4] 2nd commit
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+ create mode 100644 week02.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git log
+commit b0a9dd418908e749cc9603233630f28202f70ded (HEAD -> master)
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:10:53 2025 +0900
+
+    2nd commit
+
+commit 392107ebf6fd511aeea5c133e232e200889656b4
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 14:47:32 2025 +0900
+
+    1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git checkout 392107e
+Note: switching to '392107e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 392107e 1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu ((392107e...))
+$ cat week01.txt
+ghfghfghfghf
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu ((392107e...))
+$ git checkout -
+Previous HEAD position was 392107e 1st commit
+Switched to branch 'master'
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ cat week01.txt
+- 오리엔테이션
+- 교재소개 / 프로젝트 투표
+- 라즈베리파이
+- 분산형 버전관리 시스템 깃 깃허브
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git log
+commit b0a9dd418908e749cc9603233630f28202f70ded (HEAD -> master)
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:10:53 2025 +0900
+
+    2nd commit
+
+commit 392107ebf6fd511aeea5c133e232e200889656b4
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 14:47:32 2025 +0900
+
+    1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git config --global user.name "kimeunhyun"
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git confing --list
+git: 'confing' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=schannel
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.email=kesther4669@naver.com
+user.name=kimeunhyun
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   week02.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git commit -m "3rd commit"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   week02.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git log
+commit b0a9dd418908e749cc9603233630f28202f70ded (HEAD -> master)
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:10:53 2025 +0900
+
+    2nd commit
+
+commit 392107ebf6fd511aeea5c133e232e200889656b4
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 14:47:32 2025 +0900
+
+    1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git commit -m "3rd commit"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   week02.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git add .
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   week02.txt
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git commit -m "3rd commit"
+[master cb45ae3] 3rd commit
+ 1 file changed, 27 insertions(+), 1 deletion(-)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git log
+commit cb45ae31cd122be1517a8ddbf6c6173f386df6e8 (HEAD -> master)
+Author: kimeunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:29:04 2025 +0900
+
+    3rd commit
+
+commit b0a9dd418908e749cc9603233630f28202f70ded
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:10:53 2025 +0900
+
+    2nd commit
+
+commit 392107ebf6fd511aeea5c133e232e200889656b4
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 14:47:32 2025 +0900
+
+    1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ echo "This repository is for the IoT Applications course in the Fall 2025 semester." >> README.md
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ cat README.md
+This repository is for the IoT Applications course in the Fall 2025 semester.
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git commit -m "README.md commit"
+[master 84e91bf] README.md commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git log
+commit 84e91bf633482dadfe53d2228843676776f346a3 (HEAD -> master)
+Author: kimeunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:46:09 2025 +0900
+
+    README.md commit
+
+commit cb45ae31cd122be1517a8ddbf6c6173f386df6e8
+Author: kimeunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:29:04 2025 +0900
+
+    3rd commit
+
+commit b0a9dd418908e749cc9603233630f28202f70ded
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:10:53 2025 +0900
+
+    2nd commit
+
+commit 392107ebf6fd511aeea5c133e232e200889656b4
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 14:47:32 2025 +0900
+
+    1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (master)
+$ git branch  -M main
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git log
+commit 84e91bf633482dadfe53d2228843676776f346a3 (HEAD -> main)
+Author: kimeunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:46:09 2025 +0900
+
+    README.md commit
+
+commit cb45ae31cd122be1517a8ddbf6c6173f386df6e8
+Author: kimeunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:29:04 2025 +0900
+
+    3rd commit
+
+commit b0a9dd418908e749cc9603233630f28202f70ded
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:10:53 2025 +0900
+
+    2nd commit
+
+commit 392107ebf6fd511aeea5c133e232e200889656b4
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 14:47:32 2025 +0900
+
+    1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git add week02.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   week02.txt
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git remote add origin https://github.com/eunhyun320/kiwu.git
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git remote -v
+origin  https://github.com/eunhyun320/kiwu.git (fetch)
+origin  https://github.com/eunhyun320/kiwu.git (push)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git push -u origin main
+info: please complete authentication in your browser...
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git push -u origin main
+info: please complete authentication in your browser...
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (13/13), 1.50 KiB | 767.00 KiB/s, done.
+Total 13 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/eunhyun320/kiwu.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ ^C
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git stauts
+git: 'stauts' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   week02.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   week02.txt
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git add week02.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git commit -m "5th commit"
+[main d1442d2] 5th commit
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git log
+commit d1442d24bc01bbae2c16ff2c493939ab33fb0712 (HEAD -> main)
+Author: kimeunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 16:27:45 2025 +0900
+
+    5th commit
+
+commit 84e91bf633482dadfe53d2228843676776f346a3 (origin/main)
+Author: kimeunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:46:09 2025 +0900
+
+    README.md commit
+
+commit cb45ae31cd122be1517a8ddbf6c6173f386df6e8
+Author: kimeunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:29:04 2025 +0900
+
+    3rd commit
+
+commit b0a9dd418908e749cc9603233630f28202f70ded
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 15:10:53 2025 +0900
+
+    2nd commit
+
+commit 392107ebf6fd511aeea5c133e232e200889656b4
+Author: eunhyun <kesther4669@naver.com>
+Date:   Wed Sep 10 14:47:32 2025 +0900
+
+    1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 359 bytes | 359.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/eunhyun320/kiwu.git
+   84e91bf..d1442d2  main -> main
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$

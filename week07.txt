@@ -1,0 +1,3 @@
+$ git log : 커밋 메세지 자세히 좌라락. Q로 탈출
+$ git log --oneline : 커밋 메세지 한줄로 보여줌
+$ git clone https://github.com/eunhyun320/kiwu_pr.git .   : 클론하기

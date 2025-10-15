@@ -1,0 +1,33 @@
+리눅스명령어
+- ls 
+- ls -a
+- touch 파일명
+- echo "출력할 문자열"
+- echo "출력할 문자열" >> 파일명
+- cat
+- cd ..
+- cd 폴더명
+
+
+
+
+깃 명령어
+- git init : 깃 폴더 만들기
+- git status
+- git add 파일명 : 특정 파일만 스테이지에 올리기
+- git add . : 스테이지에 전부 다 올리기
+- git config --global user.email "이메일주소"
+- git config --global user.name "사용자이름"
+- git config --list
+- git commit -m "커밋 메세지"
+- git log : 이메일, 사용자 이름 표시
+- git checkout 해시코드(16진수 전체 또는 앞7자리)
+- git checkout - : 시간여행..?
+- git branch -M main
+- git remote add origin 원격리포지토리주소
+- git push -u origin main
+
+
+
+
+

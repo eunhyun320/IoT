@@ -1,0 +1,544 @@
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu
+$ ls
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu
+$ git clone https://github.com/eunhyun320/kiwu.git .
+Cloning into '.'...
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 16 (delta 2), reused 16 (delta 2), pack-reused 0 (from 0)
+Receiving objects: 100% (16/16), done.
+Resolving deltas: 100% (2/2), done.
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ touch week03.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        week03.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git add week03.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git commit -m "6th commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Kyungin@207-04.(none)')
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$  git config --global user.email "kesther4669@naver.com"
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git config --global user.name "eunhyun"
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git commit -m "6th commit"
+[main 0079cf8] 6th commit
+ 1 file changed, 7 insertions(+)
+ create mode 100644 week03.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git log --oneline
+0079cf8 (HEAD -> main) 6th commit
+d1442d2 (origin/main, origin/HEAD) 5th commit
+84e91bf README.md commit
+cb45ae3 3rd commit
+b0a9dd4 2nd commit
+392107e 1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git pust
+git: 'pust' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git push
+info: please complete authentication in your browser...
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 514 bytes | 514.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/eunhyun320/kiwu.git
+   d1442d2..0079cf8  main -> main
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git log --oneline
+0079cf8 (HEAD -> main, origin/main, origin/HEAD) 6th commit
+d1442d2 5th commit
+84e91bf README.md commit
+cb45ae3 3rd commit
+b0a9dd4 2nd commit
+392107e 1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ mkdir kiwu2
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ ls
+README.md  kiwu2/  week01.txt  week02.txt  week03.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ cd kiwu2
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git clone https://github.com/inhadeepblue/2025NCS_KIOSK.git .
+Cloning into '.'...
+remote: Enumerating objects: 198, done.
+remote: Counting objects: 100% (57/57), done.
+remote: Compressing objects: 100% (46/46), done.
+remote: Total 198 (delta 29), reused 39 (delta 11), pack-reused 141 (from 1)
+Receiving objects: 100% (198/198), 51.21 KiB | 10.24 MiB/s, done.
+Resolving deltas: 100% (111/111), done.
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git log --oneline
+0d35e99 (HEAD -> main, origin/main, origin/HEAD) week13 kiosk v4.6 thread
+fe44969 week13 kiosk v4.5 thread
+c2d788d week13 kiosk v4.4 thread
+c7883c2 week13 kiosk v4.3 thread
+66ffe72 week12 kiosk v4.2
+a3871cb week12 kiosk v4.1
+9569044 week12 kiosk v4.0
+bcbe850 week12 kiosk v3.9
+31902e6 week12 kiosk v3.8
+fb71039 week11 v0.3 web
+022aa5b week11 kiosk v3.7
+d5f7a97 week10 v0.2 web
+8a630d6 week10 v0.1 web
+9b44c27 week09 kiosk v3.6 gui
+0f0d7dc week09 kiosk v3.5 gui
+d5a67ca week09 kiosk v3.4 gui
+e53d7fd week09 kiosk v3.3 gui
+a19be8e week09 kiosk v3.2 gui
+adcc789 week07 kiosk  v3.1 db
+73ecda5 week07 kiosk  v3.0 db
+d95e6d6 week07 kiosk v2.9
+7fb3697 week06 kiosk v2.8 file IO
+c31b36b week06 kiosk v2.7
+e7b58bb week06 kiosk v2.6
+d67300c week06 kiosk v2.5
+b4befd8 week05 kiosk v2.4 dependency
+8a83865 week05 kiosk v2.3 ììcomposition
+c0cd090 week05 kiosk v2.2 aggregation
+a12ea76 week05 v0.5 .gitignore
+e24bb2a v0.4 Pokemon wrtn
+14d960d v0.3 Pokemon claude
+fb6021a v0.2 Pokemon perplexity
+feebd39 v0.1 Pokemon copilot
+6226c60 week04 kiosk v2.1 class
+62291da week04 kiosk v2.0 class
+3ff05df week04 kiosk v1.9 class
+ee1bfb3 week04 kiosk v1.8 discount policy
+8ec20b1 week04 kiosk v1.7 exception handling
+97f544b week03 ocp v0.3
+25638b0 week03 ocp v0.2
+58f81b8 week03 ocp v0.1
+95a9fd1 week03 kiosk v1.6 .gitignore
+296242e week03 kiosk v1.5 document
+c685e44 week03 kiosk v1.4
+bb72730 week03 kiosk v1.3
+d808547 week03 kiosk v1.2
+b7657e7 week03 kiosk v1.2
+7fc5b84 week03 kiosk v1.1
+1c3e210 week03 kiosk v1.0 function
+54d1ebe week03 kiosk v0.9
+3638886 week03 kiosk v0.8
+b7a9be8 week03 kiosk v0.7
+995730b Merge branch 'dev01' week01.py and week02.py updates
+768c45f week02 kiosk v0.6
+26889ee week02 kiosk v0.6
+bdc52a6 week02 kiosk v0.5
+a4d4508 week02 kiosk v0.4
+cdb9ab4 week02 kiosk v0.3
+b1c16fd week02 kiosk v0.2
+29362f4 week02 kiosk v0.1
+e22c56f week02 .gitignore & README.md
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git log
+commit 0d35e99e124bef064bdeab7daffe124f0d64719a (HEAD -> main, origin/main, origin/HEAD)
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Tue May 27 19:44:32 2025 +0900
+
+    week13 kiosk v4.6 thread
+
+commit fe4496999b14361f8a0c18ae4ad0e24915692b7c
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Tue May 27 19:25:40 2025 +0900
+
+    week13 kiosk v4.5 thread
+
+commit c2d788df7c8627af40dd12814e807233482b8211
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Tue May 27 18:51:04 2025 +0900
+
+    week13 kiosk v4.4 thread
+
+commit c7883c219f81bb383ac611011eecac8e02e87e8a
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Tue May 27 18:41:13 2025 +0900
+
+    week13 kiosk v4.3 thread
+
+commit 66ffe726ede0e65262ebff69b9c7ef47d09058c2
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Tue May 20 19:40:20 2025 +0900
+
+    week12 kiosk v4.2
+
+commit a3871cbac957d4016f5513f7e1b76cda696731bb
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Tue May 20 19:36:30 2025 +0900
+
+    week12 kiosk v4.1
+
+commit 9569044a1973e6d394bb53fb198b0d427b145c2e
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Tue May 20 19:29:31 2025 +0900
+
+    week12 kiosk v4.0
+
+commit bcbe8508f90a31fe3403eb2291cae4e0a90022c7
+Author: inhadeepblue <deepblue@inha.ac.kr>
+Date:   Tue May 20 18:55:50 2025 +0900
+
+    week12 kiosk v3.9
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ ls
+DataCollection01.ipynb  event.py     week02.py  week07.py  week13.py
+DataCollection02.ipynb  kiosk.py     week03.py  week09.py
+README.md               ocp.py       week04.py  week10.py
+datacollection01.py     thread01.py  week05.py  week11.py
+datacollection02.py     week01.py    week06.py  week12.py
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git checkout e22c56f
+Note: switching to 'e22c56f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at e22c56f week02 .gitignore & README.md
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 ((e22c56f...))
+$ ls
+README.md
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 ((e22c56f...))
+$ git checkout -
+Previous HEAD position was e22c56f week02 .gitignore & README.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ ls
+DataCollection01.ipynb  event.py     week02.py  week07.py  week13.py
+DataCollection02.ipynb  kiosk.py     week03.py  week09.py
+README.md               ocp.py       week04.py  week10.py
+datacollection01.py     thread01.py  week05.py  week11.py
+datacollection02.py     week01.py    week06.py  week12.py
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git push
+remote: Permission to inhadeepblue/2025NCS_KIOSK.git denied to eunhyun320.
+fatal: unable to access 'https://github.com/inhadeepblue/2025NCS_KIOSK.git/': The requested URL returned error: 403
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git remote -v
+origin  https://github.com/inhadeepblue/2025NCS_KIOSK.git (fetch)
+origin  https://github.com/inhadeepblue/2025NCS_KIOSK.git (push)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git remote remove origin
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git remote -v
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git remote add origin https://github.com/eunhyun320/kiwu2.git
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git remote -v
+origin  https://github.com/eunhyun320/kiwu2.git (fetch)
+origin  https://github.com/eunhyun320/kiwu2.git (push)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git pust -u origin main
+git: 'pust' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git push -u origin main
+remote: Repository not found.
+fatal: repository 'https://github.com/eunhyun320/kiwu2.git/' not found
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git remote add origin https://github.com/eunhyun320/kiwu2.git
+error: remote origin already exists.
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ ^C
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git remote -v
+origin  https://github.com/eunhyun320/kiwu2.git (fetch)
+origin  https://github.com/eunhyun320/kiwu2.git (push)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ git push -u origin main
+Enumerating objects: 198, done.
+Counting objects: 100% (198/198), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (86/86), done.
+Writing objects: 100% (198/198), 51.21 KiB | 25.60 MiB/s, done.
+Total 198 (delta 111), reused 198 (delta 111), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (111/111), done.
+To https://github.com/eunhyun320/kiwu2.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ cd kiwu
+bash: cd: kiwu: No such file or directory
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu/kiwu2 (main)
+$ cd ..
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1.01 KiB | 49.00 KiB/s, done.
+From https://github.com/eunhyun320/kiwu
+   0079cf8..18cad5c  main       -> origin/main
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git log --oneline
+0079cf8 (HEAD -> main) 6th commit
+d1442d2 5th commit
+84e91bf README.md commit
+cb45ae3 3rd commit
+b0a9dd4 2nd commit
+392107e 1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git pull
+Updating 0079cf8..18cad5c
+Fast-forward
+ week03.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git log --oneline
+18cad5c (HEAD -> main, origin/main, origin/HEAD) 7th commit
+0079cf8 6th commit
+d1442d2 5th commit
+84e91bf README.md commit
+cb45ae3 3rd commit
+b0a9dd4 2nd commit
+392107e 1st commit
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ rm -rf kiwu2/
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ ls
+README.md  week01.txt  week02.txt  week03.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ cd..
+bash: cd..: command not found
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ cd ..
+
+Kyungin@207-04 MINGW64 ~/Desktop
+$ mkdir kiwu2
+
+Kyungin@207-04 MINGW64 ~/Desktop
+$ ls
+'Adobe After Effects 2025.lnk'*
+'Adobe Animate 2024.lnk'*
+'Adobe Dreamweaver 2021.lnk'*
+'Adobe Illustrator 2025.lnk'*
+'Adobe Photoshop 2025.lnk'*
+'Adobe Premiere Pro 2025.lnk'*
+'Adobe XD.lnk'*
+'Android Studio.lnk'*
+'Arduino IDE.lnk'*
+'Eclipse IDE for Java Developers - 2025-09.lnk'*
+ Excel.lnk*
+ Figma.lnk*
+'IDLE (Python 3.13 64-bit).lnk'*
+'Microsoft Edge.lnk'*
+'Node.js command prompt.lnk'*
+ Node.js.lnk*
+ PowerPoint.lnk*
+'Python 3.13 (64-bit).lnk'*
+'SQL Server 2022 구성 관리자.lnk'*
+'SQL Server Management Studio 21.lnk'*
+'Scratch 3.lnk'*
+'Visual Studio Code.lnk'*
+ Word.lnk*
+'XAMPP Control Panel.lnk'*
+ desktop.ini
+ kiwu/
+ kiwu2/
+
+Kyungin@207-04 MINGW64 ~/Desktop
+$ cd kiwu2
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu2
+$ git clone https://github.com/inhadeepblue/2025NCS_KIOSK.git .
+Cloning into '.'...
+remote: Enumerating objects: 198, done.
+remote: Counting objects: 100% (57/57), done.
+remote: Compressing objects: 100% (46/46), done.
+remote: Total 198 (delta 29), reused 39 (delta 11), pack-reused 141 (from 1)
+Receiving objects: 100% (198/198), 51.21 KiB | 8.54 MiB/s, done.
+Resolving deltas: 100% (111/111), done.
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu2 (main)
+$ vi week01.py
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu2 (main)
+$ cat week01.py
+print("Introduction")
+print("Introduction")
+print("Introduction")
+print("Introduction")
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   week01.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu2 (main)
+$ cd ..
+
+Kyungin@207-04 MINGW64 ~/Desktop
+$ cd kiwu
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$  git commit -m "6th commit"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   week03.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git add week03.txt
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$  git commit -m "6th commit"
+[main d8879bd] 6th commit
+ 1 file changed, 4 insertions(+)
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$  git commit -m "7th commit"
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 391 bytes | 391.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/eunhyun320/kiwu.git
+   18cad5c..d8879bd  main -> main
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$ ^C
+
+Kyungin@207-04 MINGW64 ~/Desktop/kiwu (main)
+$
