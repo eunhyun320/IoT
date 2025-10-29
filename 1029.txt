@@ -1,3 +1,36 @@
 sudo apt install python3-pandas
 sudo apt install python3-seaborn
 실행 : python3 week09.py 아니면 걍 실행버튼 누르기
+
+kesther4669@kimeunhyun:~ $ git version
+git version 2.39.5
+
+kesther4669@kimeunhyun:~ $ pwd
+/home/kesther4669
+
+kesther4669@kimeunhyun:~ $ 
+kesther4669@kimeunhyun:~ $ git clone https://github.com/eunhyun320/IoT.git
+'IoT'에 복제합니다...
+remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 14 (delta 3), reused 14 (delta 3), pack-reused 0 (from 0)
+오브젝트를 받는 중: 100% (14/14), 12.75 KiB | 567.00 KiB/s, 완료.
+델타를 알아내는 중: 100% (3/3), 완료.
+
+kesther4669@kimeunhyun:~ $ git log --oneline --graph
+fatal: (현재 폴더 또는 상위 폴더 중 일부가) 깃 저장소가 아닙니다: .git
+
+kesther4669@kimeunhyun:~ $ ls
+0409.txt  0514.txt  0611.txt   Downloads     PYTHON_CODE  Videos             week05
+0416.txt  0521.txt  Bookshelf  IoT           Pictures     finaltext.txt      week05.txt
+0430.txt  0528.txt  Desktop    IoT_기말.pdf  Public       raspberrypi5.webp  기말예상.pdf
+0507.txt  0604.txt  Documents  Music         Templates    week04
+
+kesther4669@kimeunhyun:~ $ cd IoT
+kesther4669@kimeunhyun:~/IoT $ git log --oneline --graph
+* 662d3b7 (HEAD -> main, origin/main, origin/HEAD) README.md commit
+* 183ca22 1015 commit
+
+
+git status -> git add -> git commit -> git push
