@@ -1,0 +1,3 @@
+sudo apt install python3-pandas
+sudo apt install python3-seaborn
+실행 : python3 week09.py 아니면 걍 실행버튼 누르기
