@@ -26,4 +26,5 @@ t3.join()
 # 아래처럼 쓰면 멀티 스레드 아니어서 각각 1.5초씩이라 총 3초 걸림
 # count_task("작업A", 3)
 # count_task("작업B", 3)
+
 print(f"총 소요시간: {time.time() - start:.1f}초\n")
