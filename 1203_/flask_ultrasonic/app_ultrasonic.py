@@ -18,14 +18,14 @@ GPIO.setup(TRIG, GPIO.OUT)
 GPIO.setup(ECHO, GPIO.IN)
 GPIO.setup(LED_PIN, GPIO.OUT)
 
-# 전역 변수
+# 전역 변수(어떤 함수에서도 사용 가능)
 current_distance = 0
 led_status = False
 
-def measure_distance():
+def measure_distance():  # 거리 측정 함수
     GPIO.output(TRIG, True)
-    time.sleep(0.00001)
-    GPIO.output(TRIG, False)
+    time.sleep(0.00001) # 1/10만초 동안 전기
+    GPIO.output(TRIG, False)  # 전기 끝
     
     start_time = time.time()
     timeout = time.time() + 0.1  # 100ms 타임아웃
@@ -38,20 +38,22 @@ def measure_distance():
     
     try:
         elapsed_time = end_time - start_time
-        distance = (elapsed_time * 34300) / 2
+        distance = (elapsed_time * 34300) / 2  # 편도
         return round(distance, 2)
+    
     except:
         return -1  # 에러 시
 
 def update_sensor_data():
-    global current_distance
+    global current_distance  # global : 전역변수 가리키는 키워드
+
     while True:
         current_distance = measure_distance()
-        time.sleep(0.5)
+        time.sleep(0.5)  # 0.5초 딜레이
 
 # 백그라운드에서 센서 데이터 업데이트
-sensor_thread = threading.Thread(target=update_sensor_data)
-sensor_thread.daemon = True
+sensor_thread = threading.Thread(target=update_sensor_data)  # threading 모듈의 Thread객체 생성. Thread랑 함수 바인딩함
+sensor_thread.daemon = True  #daemon : 백그라운드. 메인 종료되면 sensor_thread가 하던 작업 끝나지 않아도 강제로 종료
 sensor_thread.start()
 
 @app.route('/')
