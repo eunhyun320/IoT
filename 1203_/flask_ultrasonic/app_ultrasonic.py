@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 import RPi.GPIO as GPIO
 import time
-import threading
+import threading  ### 시험 ###
 
 app = Flask(__name__)  # 객체 생성
 
@@ -24,7 +24,7 @@ led_status = False
 
 def measure_distance():  # 거리 측정 함수
     GPIO.output(TRIG, True)
-    time.sleep(0.00001) # 1/10만초 동안 전기
+    time.sleep(0.00001)    # 1/10만초 동안 전기
     GPIO.output(TRIG, False)  # 전기 끝
     
     start_time = time.time()
