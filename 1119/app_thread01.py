@@ -2,15 +2,18 @@ import time
 import threading
 
 print("=== 스레드 없이 실행 ===")
-def count_task(name,count):
+def count_task(name,count):  # 매개변수: name → 작업 이름 (출력용), count → 몇 번 반복할지
     for i in range(count):
         print(f"{name}: {i+1}")
         time.sleep(0.5)
     
 
-start = time.time()
+start = time.time()     # 현재 시간을 저장. 나중에 총 실행 시간 계산에 사용
 
 # 멀티 스레드 : 멀티 가능이라 각 1.5초 이고 총 소요시간도 1.5초임
+# 새로운 스레드 객체 생성
+# target=count_task → 실행할 함수 지정
+# args=("작업A", 3) → 함수 인자 전달 (count_task("작업A", 3))
 t1 = threading.Thread(target=count_task, args=("작업A", 3))
 t2 = threading.Thread(target=count_task, args=("작업B", 3))
 t3 = threading.Thread(target=count_task, args=("작업C", 3))
